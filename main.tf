@@ -76,12 +76,9 @@ Security_groups = module.blog_sg.security_group_id
       protocol         = "HTTP"
       port             = 80
       target_type      = "instance"
-      targets = {
-              target_id   = aws_instance.blog.id
-              port = 80
-    }
+     
   }
-}
+
 ]
 
 http_tcp_listeners = {
