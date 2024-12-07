@@ -48,6 +48,16 @@ resource "aws_instance" "web" {
   }
 }
 
+module "autoscaling"
+{
+  source = "terrform-aws-modules/autoscaling/aws"
+  version = "6.5.2"
+  name = "blog"
+  min_size = 1
+  max_size = 2
+  vpc_zone_identifier
+}
+
 module "alb" {
   source = "terraform-aws-modules/alb/aws"
   version = "~> 6.0"
